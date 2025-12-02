@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Health Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Health Prediction & Tracking System</h1>
+        <nav>
+            <a href="/">Predict Weight</a>
+            <a href="/track">Track Metrics</a>
+            <a href="/dashboard">Dashboard</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Your Health Dashboard</h2>
+        <form action="/dashboard" method="get">
+            <label for="user_id">User ID:</label>
+            <input type="text" id="user_id" name="user_id" required>
+            <button type="submit">Load Data</button>
+        </form>
+        <canvas id="healthChart" width="400" height="200"></canvas>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
